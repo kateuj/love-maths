@@ -12,10 +12,22 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
     }
+
+    runGame("addition");
 });
-function runGame() {
+
+function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
+
+    if (gameType === "addition") {
+        displayAdditionQuestion(num1, num2);
+    } else {
+        alert(`Unknown game type: ${gameType}`);
+        throw  `Unknown game type: ${gameType}. Aborting!`;
+    }
+
+
 }
 
 function checkAnswer() {
